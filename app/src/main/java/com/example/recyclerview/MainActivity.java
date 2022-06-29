@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
                 MainData mainData = new MainData(R.drawable.ic_launcher_background, "최하은", "리사이클러뷰");
                 arrayList.add(mainData);
                 mainAdapter.notifyDataSetChanged();
+            }
+        });
+
+        Button btnNext = (Button) findViewById(R.id.btnNext);
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(myIntent);
+                finish();
             }
         });
     }
